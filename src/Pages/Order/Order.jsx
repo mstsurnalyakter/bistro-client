@@ -4,11 +4,16 @@ import Cover from '../Shared/Cover/Cover'
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useMenu from '../../Hooks/useMenu';
-import FoodCard from '../../Components/FoodCard/FoodCard';
 import OrderTab from './OrderTab/OrderTab';
+import { useParams } from 'react-router';
+import DynamicTitle from '../../Components/DynamicTitle/DynamicTitle';
 
 const Order = () => {
-     const [tabIndex, setTabIndex] = useState(0);
+    const categories = ["salad", "pizza", "soup", "desserts", "drinks"];
+     const { category } = useParams();
+     const initialIndex = categories.indexOf(category)
+
+     const [tabIndex, setTabIndex] = useState(initialIndex);
      const {menu,refetch,isLoading} = useMenu();
 
 
@@ -25,6 +30,7 @@ const Order = () => {
 
   return (
     <div className="space-y-20">
+      <DynamicTitle title="Order" />
       <Cover img={orderImg} title="Order Food" />
 
       <div>
