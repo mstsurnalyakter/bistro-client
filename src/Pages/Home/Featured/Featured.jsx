@@ -1,3 +1,4 @@
+import Button from '../../../Components/Button/Button';
 import SectionTitle from '../../../Components/SectionTitle/SectionTitle'
 
 import featuredImage from '../../../assets/home/featured.jpg'
@@ -20,9 +21,7 @@ const Featured = () => {
             deleniti, sunt perferendis repellat nihil at quam ipsa et. Fugiat,
             excepturi!
           </p>
-          <button className=" btn border-0 border-b-4 border-[#9505fc]">
-            Order Now
-          </button>
+          <Button text="Order Now" />
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import MenuItem from '../../Shared/MenuItem/MenuItem';
 import Cover from '../../Shared/Cover/Cover';
+import Button from '../../../Components/Button/Button';
 
 const MenuCategory = ({items,title,coverImg}) => {
   return (
@@ -10,6 +11,7 @@ const MenuCategory = ({items,title,coverImg}) => {
         {items?.length > 0 &&
           items?.map((item) => <MenuItem key={item?._id} item={item} />)}
       </div>
+      <Button text='Order Now' />
     </div>
   );
 }
